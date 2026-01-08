@@ -1,0 +1,46 @@
+//Program: utilJordan
+//Version: 1.0
+//author: Felix Nuño
+//Tested on:
+//          HP Prime Graphing Calculator
+//          Software version: 2.1 .14181 (2018 10 16)
+//          CAS version: 1.4.9
+//
+// Hace la forma de Jordan de M1 y la deja en M3 y M4
+// (se reserva M2 para una posible Q
+
+EXPORT utilJordan()
+BEGIN
+local JP;
+local x;
+
+
+PRINT();                      // clear terminal
+PRINT("=== utilJordan ===");
+
+CHOOSE(x,"CONFIRMAR","Usar M1 y borrar M3 y M4","Cancelar");
+
+//IF INPUT(x, "Please confirm", "x", "Type a number") THEN
+//IF INPUT(x,"Please confirm","innecesario") THEN
+IF x==1 THEN
+  // OK pressed: INPUT returned 1
+
+  JP := jordan(M1);
+  M3 := JP(1);    // Autovalores
+  M4 := JP(2);    // Autovectores
+
+  PRINT(" AutoVectores => M3");
+  PRINT(" AutoValores => M4");
+  //PRINT(M3*inv(M3));
+  PRINT("");
+  PRINT("");
+  PRINT("Para hacer e^tQ => M3*EXP(t*M4)*inv(M3) ");
+  PRINT("");
+ELSE
+  // Cancel pressed: INPUT returned 0
+  MSGBOX("Canceled. Unchanged ");
+END;
+
+PRINT("==================");
+
+END; // UtilJordan
