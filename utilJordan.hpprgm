@@ -7,7 +7,7 @@
 //          CAS version: 1.4.9
 //
 // Hace la forma de Jordan de M1 y la deja en M3 y M4
-// (se reserva M2 para una posible Q
+// (se reserva M2 para una posible Q)
 
 EXPORT utilJordan()
 BEGIN
